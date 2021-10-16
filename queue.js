@@ -1,4 +1,5 @@
-const createQueue = () => {
+//#Use QuokkaJS: https://quokkajs.com/
+const createQueue = () => { // FIFO queue
   const queue = [];
   return {
     enqueue(item) {
@@ -7,7 +8,7 @@ const createQueue = () => {
     dequeue() {
       return queue.pop()
     },
-    peek() {
+    peek() { // return the item that's next to be removed
       return queue[queue.length - 1]
     },
     get length() {
@@ -24,9 +25,15 @@ const q = createQueue()
 console.log(q.isEmpty())
 
 q.enqueue('Make an egghead lesson')
-q.enqueue('Help others learn')
-q.enqueue('Be happy')
+console.log(q.length)
+q.peek()//?
 
+q.enqueue('Help others learn')
+console.log(q.length)
+q.peek()//?
+
+q.enqueue('Be happy')
+q.peek()//?
 q.length /*?*/
 q.dequeue()
 q.length /*?*/
